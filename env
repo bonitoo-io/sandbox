@@ -1,4 +1,4 @@
 
-NDIR=./node-v12.13.0-linux-x64
+NDIR=../node-v12.13.0-linux-x64
 MYNODE=${NDIR}/bin/node
 MYNPM=${NDIR}/bin/npm
