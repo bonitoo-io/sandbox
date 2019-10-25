@@ -1,5 +1,8 @@
 #!/bin/bash 
 
+docker run --net host --name influx-v2 quay.io/influxdb/influx:nightly /entrypoint.sh influxd --e2e-testing=true &
+sleep 30
+
 
 source ./env
 
