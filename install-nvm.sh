@@ -11,4 +11,4 @@ npm --version
 which npm
 npm install
 
-
+find /usr/local/n/versions/node/12.13.0
