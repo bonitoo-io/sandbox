@@ -20,7 +20,7 @@ jobs:
       - checkout
       - run: chmod u+x ./checkout-acceptance-suite.sh && ./checkout-acceptance-suite.sh
         #      - run: ./install-nvm.sh
-      - run: nvm version && nvm use 10.16
+      - run: npm --version # && nvm use 10.16
       - run: cd selenium-accept-infl2 && npm install
       - run: ./configure-test-suite.sh
       - run: docker run --net host --name influx-v2 quay.io/influxdb/influx:nightly /entrypoint.sh influxd --e2e-testing=true &
