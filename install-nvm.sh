@@ -18,9 +18,9 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | b
 export NVM_DIR="/home/circleci/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-nvm install v10.16.3
-nvm use v10.16.3 #and set a default with alias: nvm alias default node.
-nvm alias default node
+nvm install stable
+nvm use stable #and set a default with alias: nvm alias default node.
+nvm alias default stable
 
 
 
