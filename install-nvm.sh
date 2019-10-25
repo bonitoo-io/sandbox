@@ -1,14 +1,7 @@
 #!/bin/bash -x
 
 
-npm --version # && nvm use 10.16
-npm cache clean -f
-npm install -g n
-npm --version # && nvm use 10.16
-cd selenium-accept-infl2
-sudo /opt/circleci/.nvm/versions/node/v6.1.0/bin/n stable
-npm --version
-which npm
-npm install
+rm -rf node-v12.13.0-linux-x64
+wget https://nodejs.org/dist/v12.13.0/node-v12.13.0-linux-x64.tar.gz
+tar xvfz  ./node-v12.13.0-linux-x64.tar.gz
 
-find /usr/local/n/versions/node/12.13.0
