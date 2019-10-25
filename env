@@ -2,3 +2,5 @@
 NDIR=../node-v10.16.3-linux-x64
 MYNODE=${NDIR}/bin/node
 MYNPM=${NDIR}/bin/npm
+
+
