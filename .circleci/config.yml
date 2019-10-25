@@ -19,7 +19,7 @@ jobs:
           at: ~/project
       - checkout
       - run: chmod u+x ./checkout-acceptance-suite.sh && ./checkout-acceptance-suite.sh
-      - run: ./install_nvm.sh
+      - run: ./install-nvm.sh
       - run: docker run --net host --name influx-v2 quay.io/influxdb/influx:nightly /entrypoint.sh influxd --e2e-testing=true &
 
         #      - run: docker login -u=$QUAY_USER -p=$QUAY_PASS quay.io
