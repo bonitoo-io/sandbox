@@ -22,7 +22,7 @@ jobs:
       - run: ./install-nvm.sh
       - run: ./configure-test-suite.sh
       - run: docker run --net host --name influx-v2 quay.io/influxdb/influx:nightly /entrypoint.sh influxd --e2e-testing=true &
-      - run: . ./env && $MYNPM --version && $MYNODE --version
+      - run: . ./env && $MYNODE --version
       - run: . ./env && $MYNPM install
       - run: . ./env && $MYNPM --version && $MYNODE --version
       - run: . ./env && $MYNPM test
