@@ -23,7 +23,8 @@ jobs:
       - run: npm --version # && nvm use 10.16
       - run: npm cache clean -f
       - run: npm install -g n
-      - run: sudo n stable
+      - run: npm --version # && nvm use 10.16
+      - run: sudo /opt/circleci/.nvm/versions/node/v6.1.0/bin/n stable
       - run: cd selenium-accept-infl2 && npm install
       - run: ./configure-test-suite.sh
       - run: docker run --net host --name influx-v2 quay.io/influxdb/influx:nightly /entrypoint.sh influxd --e2e-testing=true &
