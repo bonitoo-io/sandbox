@@ -1,0 +1,42 @@
+version: 2
+
+# Strategy
+# 1. Fetch the remote repository of the acceptance suite, git fetch or clone our repo
+# 2. Run all the nightly images (influxdb, telegraf) from quayi 
+#   2.1. Save on docker compose by using the trick "--net host" and "machine: true", found in litmus
+#   2.2. -v /var/run/docker.sock:/var/run/docker.sock, this will fix issue with connection to Docker
+#   2.3. entryppoint with e2e testing w/o new Dockerfile
+# 3. Run the acceptance suite, build reports
+# 4. Map the reports to the output artifacts
+
+jobs:
+  accsuite:
+    machine: true
+    #    docker: 
+    #  - image: circleci/node:4.8.2 # the primary container, where your job's commands are run
+    steps:
+      - attach_workspace:
+          at: ~/project
+      - checkout
+      - run: ./checkout-acceptance-suite.sh
+      - run: ./install-nvm.sh
+      - run: ./configure-test-suite.sh
+      - run: docker run --net host --name influx-v2 quay.io/influxdb/influx:nightly /entrypoint.sh influxd --e2e-testing=true &
+      - run: . ./env && $MYNODE --version
+      - run: . ./env && $MYNPM install
+      - run: . ./env && $MYNPM --version && $MYNODE --version
+      - run: . ./env && $MYNPM test
+      - run: . ./env && $MYNODE src/utils/htmlReport.js
+        #node src/utils/junitReport.js
+        #      - run: docker login -u=$QUAY_USER -p=$QUAY_PASS quay.io
+        #- - run: docker run --entrypoint "./run_litmus_tests_oss.sh" -e ONE_TEST=src/cloud/rest_api/smoke/test_smoke.py -e BINARYPATH=/Litmus/result/bin/linux/influxd -e BOLTPATH=/Litmus/result/influxd_test/influxd.bolt -e ENGINEPATH=/Litmus/result/influxd_test --net host -v /var/run/docker.sock:/var/run/docker.sock -v ~/project:/Litmus/result quay.io/influxdb/litmus:latest
+        #- run: #docker image nightly build run with e2e testing=true w/o building docker image
+        #- #run: docker run --entrypoint "./run_litmus_tests_oss.sh" -e ONE_TEST=src/cloud/rest_api/smoke/test_smoke.py -e BINARYPATH=/Litmus/result/bin/linux/influxd -e BOLTPATH=/Litmus/result/influxd_test/influxd.bolt -e ENGINEPATH=/Litmus/result/influxd_test --net host -v /var/run/docker.sock:/var/run/docker.sock -v ~/project:/Litmus/result quay.io/influxdb/litmus:latest
+        #- run: echo "hello world" # run the `echo` command
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - accsuite
+

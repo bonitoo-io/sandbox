@@ -1,0 +1,15 @@
+
+CDIR=`dirname $0`
+NDIR=../node-v10.16.3-linux-x64
+#MYNODE=${NDIR}/bin/node
+#MYNPM=${NDIR}/bin/npm
+#export PATH=./node-v10.16.3-linux-x64/bin:$PATH
+
+MYNODE=node
+MYNPM=npm
+
+export NVM_DIR="/home/circleci/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+nvm use stable
+cd ./selenium-accept-infl2
