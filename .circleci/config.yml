@@ -22,10 +22,10 @@ jobs:
       - run: ./install-nvm.sh
       - run: ./configure-test-suite.sh
       - run: docker run --net host --name influx-v2 quay.io/influxdb/influx:nightly /entrypoint.sh influxd --e2e-testing=true &
-      - run: . ./env && cd selenium-accept-infl2 && $MYNPM --version && $MYNODE --version
-      - run: . ./env && cd selenium-accept-infl2 && $MYNPM install
-        #- run: . ./env && cd selenium-accept-infl2 && $MYNPM test
-        #- run: . ./env && cd selenium-accept-infl2 && $MYNODE src/utils/htmlReport.js
+      - run: . ./env && $MYNPM --version && $MYNODE --version
+      - run: . ./env && $MYNPM install
+      - run: . ./env && $MYNPM test
+      - run: . ./env && $MYNODE src/utils/htmlReport.js
         #node src/utils/junitReport.js
         #      - run: docker login -u=$QUAY_USER -p=$QUAY_PASS quay.io
         #- - run: docker run --entrypoint "./run_litmus_tests_oss.sh" -e ONE_TEST=src/cloud/rest_api/smoke/test_smoke.py -e BINARYPATH=/Litmus/result/bin/linux/influxd -e BOLTPATH=/Litmus/result/influxd_test/influxd.bolt -e ENGINEPATH=/Litmus/result/influxd_test --net host -v /var/run/docker.sock:/var/run/docker.sock -v ~/project:/Litmus/result quay.io/influxdb/litmus:latest
