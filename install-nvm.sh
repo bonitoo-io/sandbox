@@ -21,7 +21,6 @@ export NVM_DIR="/home/circleci/.nvm"
 nvm use v10.16.3 #and set a default with alias: nvm alias default node.
 nvm alias default node
 
-nvm ls
 
 
 #install what I want
