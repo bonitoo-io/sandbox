@@ -24,6 +24,7 @@ jobs:
       - run: docker run --net host --name influx-v2 quay.io/influxdb/influx:nightly /entrypoint.sh influxd --e2e-testing=true &
       - run: . ./env && $MYNPM --version && $MYNODE --version
       - run: . ./env && $MYNPM install
+      - run: . ./env && $MYNPM --version && $MYNODE --version
       - run: . ./env && $MYNPM test
       - run: . ./env && $MYNODE src/utils/htmlReport.js
         #node src/utils/junitReport.js
