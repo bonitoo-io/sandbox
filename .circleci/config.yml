@@ -19,7 +19,7 @@ jobs:
           at: ~/project
       - checkout
       - run: ./checkout-acceptance-suite.sh
-      - run: ./install-nvm2.sh
+      - run: ./install-nvm.sh
       - run: ./configure-test-suite.sh
       - run: docker run --net host --name influx-v2 quay.io/influxdb/influx:nightly /entrypoint.sh influxd --e2e-testing=true &
       - run: . ./env && $MYNPM --version && $MYNODE --version
