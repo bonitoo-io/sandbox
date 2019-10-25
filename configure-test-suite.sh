@@ -7,3 +7,4 @@ echo "INFO: Cofiguration"
 cat bonitoo.conf.json
 
 
+
