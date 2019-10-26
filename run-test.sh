@@ -16,7 +16,7 @@ fi
 
 
 echo "DEBUG: run test"
-npm test
+sudo npm test
 
 #node src/utils/htmlReport.js
 #node src/utils/junitReport.js
