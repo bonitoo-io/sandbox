@@ -9,6 +9,6 @@ echo "INFO: Configuration"
 cat bonitoo.conf.json
 
 echo "INFO: Code"
-cat ./src/pages/basePage |grep 12000
+cat ./src/pages/basePage.js |grep 12000
 
 
