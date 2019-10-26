@@ -1,10 +1,13 @@
 #!/bin/bash
 
 cd ./selenium-accept-infl2
-sed -i  's/"active": "development"/"active:": "nightly"/' bonitoo.conf.json
+sed -i 's/"headless": false/"headless:": true/' bonitoo.conf.json
+sed -i 's/"host": "aws-somewhere"/"host": "localhost"/' bonitoo.conf.json
 
-echo "INFO: Cofiguration"
+echo "INFO: Configuration"
 cat bonitoo.conf.json
 
+echo "INFO: Code"
+cat ./src/pages/basePage.js |grep 12000
 
 

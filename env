@@ -13,3 +13,7 @@ export NVM_DIR="/home/circleci/.nvm"
 
 nvm use stable
 cd ./selenium-accept-infl2
+
+echo "DEBUG: version check"
+node --version
+npm --version
