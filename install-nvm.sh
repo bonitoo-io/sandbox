@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# TODO try also 1st example from https://circleci.com/docs/2.0/circleci-images/#best-practices
+# 
 #uninstall 
 rm -rf ~/.nvm
 rm -rf ~/.npm
