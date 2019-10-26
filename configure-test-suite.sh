@@ -7,7 +7,5 @@ sed -i 's/"host": "aws-somewhere"/"host": "localhost"/' bonitoo.conf.json
 echo "INFO: Configuration"
 cat bonitoo.conf.json
 
-echo "INFO: Code"
-cat ./src/pages/basePage.js |grep 12000
 
 
