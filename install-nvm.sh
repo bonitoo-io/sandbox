@@ -8,8 +8,8 @@ rm -rf $NVM_DIR ~/.npm ~/.bower
 unset NVM_DIR NVM_BIN
 rm -rf node*
 
-sudo apt-get update
-sudo apt-get -y install build-essential checkinstall libssl-dev
+#sudo apt-get update
+#sudo apt-get -y install build-essential checkinstall libssl-dev
 
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
 
