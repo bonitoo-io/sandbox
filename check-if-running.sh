@@ -1,8 +1,8 @@
 #!/bin/bash
 
 n=0
-MMAX=10
-WAITME=1
+MMAX=15
+WAITME=3
 
 while [ $n -lt $MMAX ]
 do
