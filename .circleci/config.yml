@@ -23,6 +23,9 @@ jobs:
       - run: ./run-test.sh
         #      - run: . ./env && $MYNODE src/utils/htmlReport.js
         #node src/utils/junitReport.js
+      - store_artifacts: 
+          path: ./screenshots/*.png
+          destination: artifact-file
         
 workflows:
   version: 2
