@@ -19,7 +19,7 @@ fi
 
 
 echo "DEBUG: run test"
-npm test
+npm test -- features/onboarding/onboarding.feature
 
 #node src/utils/htmlReport.js
 #node src/utils/junitReport.js
