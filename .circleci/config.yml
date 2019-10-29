@@ -16,8 +16,6 @@ jobs:
       - attach_workspace:
           at: ~/project
       - checkout
-      - run: pwd
-      - run: ls -al
       - run: ./checkout-acceptance-suite.sh
       - run: ./install-nvm.sh
       - run: ./configure-test-suite.sh
@@ -26,7 +24,7 @@ jobs:
         #      - run: . ./env && $MYNODE src/utils/htmlReport.js
         #node src/utils/junitReport.js
       - store_artifacts: 
-          path: ./selenium-accept-infl2/screenshots/*.png
+          path: ./selenium-accept-infl2/screenshots/**/*.png
           destination: artifact-file
         
 workflows:
