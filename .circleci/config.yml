@@ -24,7 +24,7 @@ jobs:
         #      - run: . ./env && $MYNODE src/utils/htmlReport.js
         #node src/utils/junitReport.js
       - store_artifacts: 
-          path: ./selenium-accept-infl2/screenshots/**/*.png
+          path: ./selenium-accept-infl2/screenshots/*
           destination: artifact-file
         
 workflows:
