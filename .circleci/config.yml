@@ -23,7 +23,7 @@ jobs:
       #- run: ./run-test.sh
         #      - run: . ./env && $MYNODE src/utils/htmlReport.js
         #node src/utils/junitReport.js
-        run: cd ./selenium-accept-infl2 && mkdir -p screenshots/test && echo "test.txt" > screenshots/test/test.txt
+      - run: cd ./selenium-accept-infl2 && mkdir -p screenshots/test && echo "test.txt" > screenshots/test/test.txt
       - run: ls -al 
       - store_artifacts: 
           path: ./selenium-accept-infl2/screenshots
