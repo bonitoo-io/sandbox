@@ -21,6 +21,7 @@ jobs:
       - run: ./configure-test-suite.sh
       - run: cd ./selenium-accept-infl2 && mkdir -p screenshots/test && echo "test.txt" > screenshots/test/test.txt
       - run: ls -al
+      - run: chromium-browser --version
         #      - run: docker run --net host --name influx-v2 quay.io/influxdb/influx:nightly /entrypoint.sh influxd --e2e-testing=true &
       - run: ./run-test.sh
         #      - run: . ./env && $MYNODE src/utils/htmlReport.js
