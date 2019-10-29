@@ -4,8 +4,6 @@ n=0
 MMAX=60
 WAITME=3
 
-sudo less /etc/hosts
-
 ping -c 4 localhost
 
 sudo netstat -tlnp 
