@@ -4,9 +4,13 @@ n=0
 MMAX=15
 WAITME=3
 
+ping -c 4 localhost
+
+sudo netstat -tlnp 
+
 while [ $n -lt $MMAX ]
 do
-    if curl http://localhost:9999/ ; then
+    if curl -v http://localhost:9999/ ; then
         echo "Influx is running"
         break;
     fi
