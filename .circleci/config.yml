@@ -20,9 +20,10 @@ jobs:
       - run: ./install-nvm.sh
       - run: ./configure-test-suite.sh
         #      - run: docker run --net host --name influx-v2 quay.io/influxdb/influx:nightly /entrypoint.sh influxd --e2e-testing=true &
-      - run: ./run-test.sh
+      #- run: ./run-test.sh
         #      - run: . ./env && $MYNODE src/utils/htmlReport.js
         #node src/utils/junitReport.js
+        run: cd ./selenium-accept-infl2 && mkdir -p screenshots/test && echo "test.txt" > screenshots/test/test.txt
       - run: ls -al 
       - store_artifacts: 
           path: ./selenium-accept-infl2/screenshots
