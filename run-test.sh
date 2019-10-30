@@ -17,6 +17,12 @@ if ! ../check-if-running.sh ; then
     exit 1
 fi
 
+echo "Installed Chromium Version"
+chromium-browser --version
+
+echo "Chrome Driver Version"
+node_modules/.bin/chromedriver --version
+
 
 echo "DEBUG: run test"
 npm test -- features/onboarding/onboarding.feature
