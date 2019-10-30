@@ -24,6 +24,9 @@ nvm install stable
 nvm use stable #and set a default with alias: nvm alias default node.
 nvm alias default stable
 
+which node
+which npm
+
 
 
 #install what I want
