@@ -16,6 +16,7 @@ jobs:
       - attach_workspace:
           at: ~/project
       - checkout
+      - run: ./install-chromium.sh
       - run: ./checkout-acceptance-suite.sh
       - run: ./install-nvm.sh
       - run: ./configure-test-suite.sh
