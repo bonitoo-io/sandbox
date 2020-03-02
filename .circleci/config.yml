@@ -33,7 +33,8 @@ jobs:
       - store_artifacts: 
           path: ./selenium-accept-infl2/report
   dologin:
-    machine: true
+    docker:
+      - image: circleci/node:13.0.1-stretch-browsers
     steps:
       - setup_remote_docker
   imagecheck:
