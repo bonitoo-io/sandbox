@@ -32,6 +32,11 @@ jobs:
           path: ./selenium-accept-infl2/screenshots
       - store_artifacts: 
           path: ./selenium-accept-infl2/report
+  dologin:
+    machine: 
+      image: circleci/golang:1.12-node-browsers
+    steps:
+      - setup_remote_docker
   imagecheck:
     machine:
       image: circleci/node:13.8.0-stretch
@@ -42,4 +47,6 @@ workflows:
   build:
     jobs:
       - imagecheck
+         requires: 
+           - dologin
 
