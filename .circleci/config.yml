@@ -32,10 +32,14 @@ jobs:
           path: ./selenium-accept-infl2/screenshots
       - store_artifacts: 
           path: ./selenium-accept-infl2/report
-        
+  imagecheck:
+    machine:
+      image: circleci/node:13.0.1-stretch-browsers
+    steps: 
+      - run: google-chrome --version && which google-chrome && chromedriver --version && which chromedriver    
 workflows:
   version: 2
   build:
     jobs:
-      - accsuite
+      - imagecheck
 
