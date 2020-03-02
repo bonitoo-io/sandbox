@@ -38,15 +38,12 @@ jobs:
       - setup_remote_docker
   imagecheck:
     machine:
-      image: circleci/node:13.8.0-stretch
+      image: circleci/node:7.10-jessie-browsers
     steps: 
       - run: google-chrome --version && which google-chrome && chromedriver --version && which chromedriver    
 workflows:
   version: 2
   build:
     jobs:
-      - dologin       
-      - imagecheck:
-          requires: 
-            - dologin
+      - imagecheck
 
