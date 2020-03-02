@@ -37,8 +37,7 @@ jobs:
     steps:
       - setup_remote_docker
   imagecheck:
-    machine:
-      image: circleci/golang:1.12-node-browsers
+    machine: true
     steps: 
       - run: google-chrome --version && which google-chrome && chromedriver --version && which chromedriver    
 workflows:
