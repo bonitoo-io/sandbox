@@ -39,7 +39,7 @@ jobs:
       - setup_remote_docker
   imagecheck:
     docker:
-      - image: circleci/node:13.8.0-stretch-browsers      
+      - image: circleci/lts-stretch-browsers      
     steps: 
       - run: google-chrome --version && which google-chrome && chromedriver --version && which chromedriver    
 workflows:
